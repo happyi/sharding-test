@@ -11,7 +11,7 @@
  Target Server Version : 50727
  File Encoding         : 65001
 
- Date: 07/05/2022 18:08:36
+ Date: 09/05/2022 10:27:13
 */
 
 SET NAMES utf8mb4;
@@ -27,7 +27,11 @@ CREATE TABLE `nx_order` (
   `description` varchar(100) DEFAULT NULL,
   `order_number` bigint(13) DEFAULT NULL,
   `order_type` varchar(10) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `org_id` varchar(40) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `customerId` (`customer_id`) USING BTREE,
+  KEY `order_number` (`order_number`) USING BTREE,
+  KEY `org_id` (`org_id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
@@ -40,7 +44,11 @@ CREATE TABLE `nx_order_item` (
   `order_id` varchar(40) DEFAULT NULL,
   `product_id` varchar(40) DEFAULT NULL,
   `qty` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `price` decimal(10,2) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `customer_id` (`customer_id`) USING BTREE,
+  KEY `order_id` (`order_id`) USING BTREE,
+  KEY `product_id` (`product_id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
@@ -53,7 +61,11 @@ CREATE TABLE `nx_order_item_s0` (
   `order_id` varchar(40) DEFAULT NULL,
   `product_id` varchar(40) DEFAULT NULL,
   `qty` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `price` decimal(10,2) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `customer_id` (`customer_id`) USING BTREE,
+  KEY `order_id` (`order_id`) USING BTREE,
+  KEY `product_id` (`product_id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
@@ -66,7 +78,11 @@ CREATE TABLE `nx_order_item_s1` (
   `order_id` varchar(40) DEFAULT NULL,
   `product_id` varchar(40) DEFAULT NULL,
   `qty` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `price` decimal(10,2) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `customer_id` (`customer_id`) USING BTREE,
+  KEY `order_id` (`order_id`) USING BTREE,
+  KEY `product_id` (`product_id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
@@ -79,7 +95,11 @@ CREATE TABLE `nx_order_item_s2` (
   `order_id` varchar(40) DEFAULT NULL,
   `product_id` varchar(40) DEFAULT NULL,
   `qty` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `price` decimal(10,2) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `customer_id` (`customer_id`) USING BTREE,
+  KEY `order_id` (`order_id`) USING BTREE,
+  KEY `product_id` (`product_id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
@@ -92,7 +112,11 @@ CREATE TABLE `nx_order_item_s3` (
   `order_id` varchar(40) DEFAULT NULL,
   `product_id` varchar(40) DEFAULT NULL,
   `qty` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `price` decimal(10,2) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `customer_id` (`customer_id`) USING BTREE,
+  KEY `order_id` (`order_id`) USING BTREE,
+  KEY `product_id` (`product_id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
@@ -105,7 +129,11 @@ CREATE TABLE `nx_order_item_s4` (
   `order_id` varchar(40) DEFAULT NULL,
   `product_id` varchar(40) DEFAULT NULL,
   `qty` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `price` decimal(10,2) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `customer_id` (`customer_id`) USING BTREE,
+  KEY `order_id` (`order_id`) USING BTREE,
+  KEY `product_id` (`product_id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
@@ -118,7 +146,11 @@ CREATE TABLE `nx_order_item_s5` (
   `order_id` varchar(40) DEFAULT NULL,
   `product_id` varchar(40) DEFAULT NULL,
   `qty` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `price` decimal(10,2) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `customer_id` (`customer_id`) USING BTREE,
+  KEY `order_id` (`order_id`) USING BTREE,
+  KEY `product_id` (`product_id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
@@ -131,7 +163,11 @@ CREATE TABLE `nx_order_item_s6` (
   `order_id` varchar(40) DEFAULT NULL,
   `product_id` varchar(40) DEFAULT NULL,
   `qty` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `price` decimal(10,2) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `customer_id` (`customer_id`) USING BTREE,
+  KEY `order_id` (`order_id`) USING BTREE,
+  KEY `product_id` (`product_id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
@@ -144,7 +180,11 @@ CREATE TABLE `nx_order_item_s7` (
   `order_id` varchar(40) DEFAULT NULL,
   `product_id` varchar(40) DEFAULT NULL,
   `qty` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `price` decimal(10,2) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `customer_id` (`customer_id`) USING BTREE,
+  KEY `order_id` (`order_id`) USING BTREE,
+  KEY `product_id` (`product_id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
@@ -157,7 +197,11 @@ CREATE TABLE `nx_order_s0` (
   `description` varchar(100) DEFAULT NULL,
   `order_number` bigint(13) DEFAULT NULL,
   `order_type` varchar(10) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `org_id` varchar(40) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `customer_id` (`customer_id`) USING BTREE,
+  KEY `org_id` (`org_id`) USING BTREE,
+  KEY `order_number` (`order_number`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
@@ -170,7 +214,11 @@ CREATE TABLE `nx_order_s1` (
   `description` varchar(100) DEFAULT NULL,
   `order_number` bigint(13) DEFAULT NULL,
   `order_type` varchar(10) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `org_id` varchar(40) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `customer_id` (`customer_id`) USING BTREE,
+  KEY `org_id` (`org_id`) USING BTREE,
+  KEY `order_number` (`order_number`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
@@ -183,7 +231,11 @@ CREATE TABLE `nx_order_s2` (
   `description` varchar(100) DEFAULT NULL,
   `order_number` bigint(13) DEFAULT NULL,
   `order_type` varchar(10) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `org_id` varchar(40) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `customer_id` (`customer_id`) USING BTREE,
+  KEY `org_id` (`org_id`) USING BTREE,
+  KEY `order_number` (`order_number`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
@@ -196,7 +248,11 @@ CREATE TABLE `nx_order_s3` (
   `description` varchar(100) DEFAULT NULL,
   `order_number` bigint(13) DEFAULT NULL,
   `order_type` varchar(10) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `org_id` varchar(40) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `customer_id` (`customer_id`) USING BTREE,
+  KEY `org_id` (`org_id`) USING BTREE,
+  KEY `order_number` (`order_number`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
@@ -209,7 +265,11 @@ CREATE TABLE `nx_order_s4` (
   `description` varchar(100) DEFAULT NULL,
   `order_number` bigint(13) DEFAULT NULL,
   `order_type` varchar(10) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `org_id` varchar(40) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `customer_id` (`customer_id`) USING BTREE,
+  KEY `org_id` (`org_id`) USING BTREE,
+  KEY `order_number` (`order_number`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
@@ -222,7 +282,11 @@ CREATE TABLE `nx_order_s5` (
   `description` varchar(100) DEFAULT NULL,
   `order_number` bigint(13) DEFAULT NULL,
   `order_type` varchar(10) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `org_id` varchar(40) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `customer_id` (`customer_id`) USING BTREE,
+  KEY `org_id` (`org_id`) USING BTREE,
+  KEY `order_number` (`order_number`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
@@ -235,7 +299,11 @@ CREATE TABLE `nx_order_s6` (
   `description` varchar(100) DEFAULT NULL,
   `order_number` bigint(13) DEFAULT NULL,
   `order_type` varchar(10) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `org_id` varchar(40) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `customer_id` (`customer_id`) USING BTREE,
+  KEY `org_id` (`org_id`) USING BTREE,
+  KEY `order_number` (`order_number`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
@@ -248,7 +316,11 @@ CREATE TABLE `nx_order_s7` (
   `description` varchar(100) DEFAULT NULL,
   `order_number` bigint(13) DEFAULT NULL,
   `order_type` varchar(10) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `org_id` varchar(40) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `customer_id` (`customer_id`) USING BTREE,
+  KEY `org_id` (`org_id`) USING BTREE,
+  KEY `order_number` (`order_number`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 SET FOREIGN_KEY_CHECKS = 1;
