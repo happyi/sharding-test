@@ -1,22 +1,22 @@
 # sharding-test
  分库分表性能测试
 # 环境
- spring boot 2.6.7
- jpa
- shardingsphere 5.0.0
+ spring boot 2.6.7   
+ jpa   
+ shardingsphere 5.0.0   
  
 # 说明
 
-建表语句： resources/test.sql
-分片键 ：customer_id
-分片算法 ：HASH_MOD  
-分片数：8
-绑定表： nx_order nx_order_item
+建表语句： resources/test.sql  
+分片键 ：customer_id  
+分片算法 ：HASH_MOD     
+分片数：8   
+绑定表： nx_order nx_order_item   
 
 # 测试结果
 ```
-不分库分表平均耗时:18ms
-分库分表总平均耗时:57ms,性能损耗:317%
+不分库分表平均耗时:18ms   
+分库分表总平均耗时:57ms,性能损耗:317%   
 ```
 # 测试代码 
 详情参考   com.sharding.example.demo.ShardingTest
