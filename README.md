@@ -20,7 +20,7 @@
 ```
 # 测试代码 
 详情参考   com.sharding.example.demo.ShardingTest   
-···
+```
   @Test
     public void testAddOrder() {
 
@@ -64,4 +64,4 @@
         orderItemRepository.save(orderItem);
         return order.getId();
     }
-···
+```
