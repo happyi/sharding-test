@@ -19,7 +19,7 @@
 分库分表总平均耗时:57ms,性能损耗:317%   
 ```
 # 测试代码 
-详情参考   com.sharding.example.demo.ShardingTest
+详情参考   com.sharding.example.demo.ShardingTest   
 ···
   @Test
     public void testAddOrder() {
