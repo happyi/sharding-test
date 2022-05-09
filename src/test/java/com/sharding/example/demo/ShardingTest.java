@@ -25,23 +25,23 @@ public class ShardingTest {
 
     @Test
     public void testAddOrder() {
-
+        Integer times = 1000;
         DynamicDataSourceHolder.setDataSource("master");
         Long startTime = System.currentTimeMillis();
-        for(int i = 0;i<100000;i++){
+        for(int i = 0;i<times;i++){
             insertOrder();
         }
-        Long t1 = (System.currentTimeMillis() - startTime)/10000;
+        Long t1 = (System.currentTimeMillis() - startTime)/times;
         System.out.println("不分库分表平均耗时:"+t1+"ms");
         DynamicDataSourceHolder.clearDataSource();
 
         DynamicDataSourceHolder.setDataSource("sharding");
         startTime = System.currentTimeMillis();
-        for(int i = 0;i<100000;i++){
+        for(int i = 0;i<times;i++){
             insertOrder();
         }
-        Long t2 = (System.currentTimeMillis() - startTime)/10000;
-        System.out.println("分库分表总平均耗时:"+ t2+"ms,性能损耗:"+Math.round(t2*100d/t1)+"%");
+        Long t2 = (System.currentTimeMillis() - startTime)/times;
+        System.out.println("分库分表总平均耗时:"+ t2+"ms,性能损耗:"+Math.round((t2-t1)*100d/t1)+"%");
         DynamicDataSourceHolder.clearDataSource();
 
     }
